@@ -1,0 +1,128 @@
+/*Page style*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*headings and paragraghs styling*/
+h1 {
+  margin: 30px 0;
+  font-size: 4em;
+  text-align: center;
+}
+div {
+	position: relative;
+	background-color: grey;
+	margin-bottom: 15px;
+	margin-right: 0.75%;
+	margin-left: 0.75%;
+}
+p {
+ /* border: 1px solid black;*/
+  width: 90%;
+  height: 180px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+  font-family: Helvetica;
+  color: aqua;
+  background-color: grey;
+
+}
+section {
+	border: 1px solid black;
+	position: absolute;
+	top: 0px;
+	right: 0;
+	font-size: 1.5em;
+	font-weight: bolder;
+}
+.chicken {
+	background-color: pink;
+	text-align: center;
+}
+
+.beef {
+	color: white;
+	background-color: brown;
+	text-align: center;
+}
+.sushi {
+	background-color: tan;
+	text-align: center;
+}
+/* My Responsive Style. */
+.container {
+  width: 100%;
+}
+
+/********** Desktop view **********/
+@media (min-width: 992px) {
+  .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-12 {
+    float: left;
+    border: 1px solid black;
+  }
+  
+  .col-lg-4 {
+    width: 31.33%;
+  }
+  .col-lg-5 {
+    width: 41.66%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+
+/********** Tablet View only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-md-4, .col-md-5, .col-md-6, .col-md-12 {
+    float: left;
+    border: 1px solid black;
+  }
+  .col-md-4 {
+    width: 33.33%;
+  }
+  .col-md-5 {
+    width: 41.66%;
+  }
+  .col-md-6 {
+    width: 48%;
+  }
+  .col-md-12 {
+    width: 97.5%;
+  }
+  section {
+	font-size: 170%;
+	width: 33.33%
+  }
+}
+
+
+/********** Mobile devices only **********/
+@media (max-width: 767px) {
+  .col-md-4, .col-md-5, .col-md-6, .col-md-12 {
+    float: left;
+    border: 1px solid black;
+  }
+  .col-md-4 {
+    width: 33.33%;
+  }
+  .col-md-5 {
+    width: 41.66%;
+  }
+  .col-md-6 {
+    width: 97.5%;
+  }
+  .col-md-12 {
+    width: 97.5%;
+  }
+  section {
+	font-size: 190%;
+	width: 33.33%
+  }
+}
