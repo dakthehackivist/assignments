@@ -63,8 +63,8 @@ header {
 }
 #nav-list a span {
   font-size: 1.8em;
-}
 
+}
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
   border: 1px solid black;
 }
@@ -103,6 +103,7 @@ header {
 	margin:0.5%;
 	width: 99%;
 	/*padding: 0;*/
+	
 }
 
 .heading h3 {
@@ -169,6 +170,8 @@ header {
 	font-size: 2em;
 	margin-top: 10px;
 	}
+	.navbar-header {
+	border: 2px solid black;
 	
 
 }
