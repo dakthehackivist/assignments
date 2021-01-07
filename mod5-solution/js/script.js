@@ -77,6 +77,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //
 // TODO: STEP 1: Substitute [...] below with the *value* of the function buildAndShowHomeHTML,
 // so it can be called when server responds with the categories data.
+showLoading("#main-content")
+$ajaxUtils.sendGetRequest( homeHtmlUrl,
+   function(responseText){
+    document.querySelector("#main-content")
+    .innerHTML=responseText;
+   },
+  false);
+
+});//end of addeventlistener.
+
+dc.loadMenuCategories=function(){
+  showLoading("#main-content")
 
 // *** start ***
 // On first load, show home view
@@ -85,7 +97,7 @@ $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitly setting the flag to get JSON from server processed into an object literal
-});
+};
 // *** finish **
 
 
@@ -115,7 +127,7 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-      // var homeHtmlToInsertIntoMainPage = $dc.loadMenuItems('L');
+      // var homeHtmlToInsertIntoMainPage = $dc.loadMenuItems('');
 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
