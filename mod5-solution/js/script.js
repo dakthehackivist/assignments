@@ -77,18 +77,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //
 // TODO: STEP 1: Substitute [...] below with the *value* of the function buildAndShowHomeHTML,
 // so it can be called when server responds with the categories data.
-showLoading("#main-content")
-$ajaxUtils.sendGetRequest( homeHtmlUrl,
-   function(responseText){
-    document.querySelector("#main-content")
-    .innerHTML=responseText;
-   },
-  false);
+// showLoading("#main-content")
+// $ajaxUtils.sendGetRequest( homeHtmlUrl,
+//    function(responseText){
+//     document.querySelector("#main-content")
+//     .innerHTML=responseText;
+//    },
+//   false);
 
-});//end of addeventlistener.
+// });//end of addeventlistener.
 
-dc.loadMenuCategories=function(){
-  showLoading("#main-content")
+// dc.loadMenuCategories=function(){
+//   showLoading("#main-content")
 
 // *** start ***
 // On first load, show home view
@@ -97,7 +97,7 @@ $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitly setting the flag to get JSON from server processed into an object literal
-};
+});
 // *** finish **
 
 
@@ -113,7 +113,7 @@ function buildAndShowHomeHTML (categories) {
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
-      var chosenCategoryShortName = chooseRandomCategory (categories);
+      var chosenCategoryShortName = chooseRandomCategory (categories).short_name;
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -127,8 +127,9 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-      // var homeHtmlToInsertIntoMainPage = $dc.loadMenuItems('');
-
+      // var homeHtmlToInsertIntoMainPage = $dc.loadMenuCategories('SP');
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", "'" + chosenCategoryShortName + "'");
+      insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
